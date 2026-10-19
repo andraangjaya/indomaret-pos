@@ -28,7 +28,7 @@ include ROOTPATH . '/includes/header.php';
                 </div>
             </div>
 
-            <form action="" method="post" class="pos-form">
+            <form action="/process/cashiers_process.php" method="post" class="pos-form">
                 <input type="text" name="nama_kasir" placeholder="Nama Kasir" required autocomplete="off">
                 <input type="text" name="no_telp" placeholder="Nomor Telepon" required autocomplete="off">
                 <input type="text" name="alamat" placeholder="Alamat" required autocomplete="off">
