@@ -1,44 +1,47 @@
 <?php
-define('ROOTPATH', $_SERVER['DOCUMENT_ROOT'] . '/');
+if (!defined('ROOTPATH')) {
+    define('ROOTPATH', dirname(__DIR__, 2) . '/');
+}
 include ROOTPATH . '/includes/header.php';
-
 ?>
 
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indomaret POS - Tambah Kasir</title>
-    <!-- Link to Separate CSS File -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- FontAwesome for POS Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-
-<body>
-    <div class="page-wrapper">
-        <div class="pos-card">
-            <div class="card-header">
-                <i class="fa-solid fa-user-plus"></i>
+    <div class="min-h-[calc(100vh-72px)] flex items-center justify-center p-6">
+        <div class="bg-white w-full max-w-[440px] rounded-2xl border border-[#e2e8f0] shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-8">
+            <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#e2e8f0]">
+                <i class="fa-solid fa-user-plus text-[1.6rem] text-[#003399] bg-[#f0f4ff] p-3 rounded-xl"></i>
                 <div>
-                    <h2>Tambah Kasir Baru</h2>
-                    <p>Masukkan informasi data kasir terminal</p>
+                    <h2 class="text-[1.2rem] font-bold text-[#1e293b]">Tambah Kasir Baru</h2>
+                    <p class="text-[0.8rem] text-[#64748b] mt-0.5">Masukkan informasi data kasir terminal</p>
                 </div>
             </div>
 
-            <form action="/process/cashiers_process.php" method="post" class="pos-form">
-                <input type="text" name="nama_kasir" placeholder="Nama Kasir" required autocomplete="off">
-                <input type="text" name="no_telp" placeholder="Nomor Telepon" required autocomplete="off">
-                <input type="text" name="alamat" placeholder="Alamat" required autocomplete="off">
+            <form action="/process/cashiers_process.php" method="post" class="flex flex-col gap-[18px]">
+                <input type="hidden" name="action" value="add">
 
-                <button type="submit" class="btn-submit">
+                <div class="flex flex-col gap-2.5">
+                    <label for="nama_kasir" class="text-[0.72rem] font-semibold text-[#1e293b] tracking-[0.25px]">Nama Kasir</label>
+                    <input type="text" id="nama_kasir" name="nama_kasir" placeholder="Nama Kasir" required autocomplete="off"
+                        class="w-full px-3.5 py-3 border border-[#e2e8f0] rounded-lg text-[0.9rem] text-[#1e293b] bg-[#fafbfc] outline-none transition-all duration-200 placeholder:text-[#94a3b8] focus:bg-white focus:border-[#003399] focus:shadow-[0_0_0_3px_rgba(0,51,153,0.1)]">
+                </div>
+
+                <div class="flex flex-col gap-2.5">
+                    <label for="no_telp" class="text-[0.72rem] font-semibold text-[#1e293b] tracking-[0.25px]">Nomor Telepon</label>
+                    <input type="text" id="no_telp" name="no_telp" placeholder="Nomor Telepon" required autocomplete="off"
+                        class="w-full px-3.5 py-3 border border-[#e2e8f0] rounded-lg text-[0.9rem] text-[#1e293b] bg-[#fafbfc] outline-none transition-all duration-200 placeholder:text-[#94a3b8] focus:bg-white focus:border-[#003399] focus:shadow-[0_0_0_3px_rgba(0,51,153,0.1)]">
+                </div>
+
+                <div class="flex flex-col gap-2.5">
+                    <label for="alamat" class="text-[0.72rem] font-semibold text-[#1e293b] tracking-[0.25px]">Alamat</label>
+                    <input type="text" id="alamat" name="alamat" placeholder="Alamat" required autocomplete="off"
+                        class="w-full px-3.5 py-3 border border-[#e2e8f0] rounded-lg text-[0.9rem] text-[#1e293b] bg-[#fafbfc] outline-none transition-all duration-200 placeholder:text-[#94a3b8] focus:bg-white focus:border-[#003399] focus:shadow-[0_0_0_3px_rgba(0,51,153,0.1)]">
+                </div>
+
+                <button type="submit"
+                    class="mt-2 bg-[#003399] hover:bg-[#002277] text-white border-none rounded-lg py-3 text-[0.9rem] font-semibold cursor-pointer transition-all duration-200 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-check"></i> Simpan Kasir
                 </button>
             </form>
         </div>
     </div>
 </body>
-
 </html>

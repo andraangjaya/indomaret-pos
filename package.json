@@ -1,0 +1,27 @@
+{
+  "name": "indomaret",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css",
+    "watch": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andraangjaya/indomaret-pos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/andraangjaya/indomaret-pos/issues"
+  },
+  "homepage": "https://github.com/andraangjaya/indomaret-pos#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "tailwindcss": "^4.3.5"
+  }
+}

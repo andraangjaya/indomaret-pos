@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import "tailwindcss";
+
+@theme {
+    --color-indo-blue: #003399;
+    --color-indo-red: #E30613;
+    --color-indo-yellow: #FFCC00;
+    --font-sans: 'Inter', sans-serif;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
